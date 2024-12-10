@@ -8,6 +8,6 @@ WORKDIR /home/nodejs
 
 RUN npm install
 
-EXPOSE 3001
+EXPOSE 3000
 
 CMD ["node", "src/server.js"]
