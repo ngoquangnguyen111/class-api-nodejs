@@ -37,3 +37,38 @@ APIs:
         + Update thông tin Lớp
         + Xóa Lớp (nếu lớp còn HS thì ko được phép xóa)
         + Truy xuất thông tin Lớp theo ID
+
+
+Các câu lệnh test bằng cURL:
+   Thêm Học Sinh (POST Request)
+      curl -X POST http://localhost:3000/api/students -H "Content-Type: application/json" -d '{"name": "Quang Nguyen", "className": "1A"}'
+
+   Truy Xuất Tất Cả Học Sinh (GET Request)
+      curl http://localhost:3000/api/students
+
+   Truy Xuất Học Sinh Theo ID (GET Request)
+      curl http://localhost:3000/api/students/1
+
+   Tìm Học Sinh Theo Tên (GET Request)
+      curl "http://localhost:3000/api/students/search/name?name=Quang%20Nguyen"
+
+   Truy Xuất Học Sinh Theo Lớp (GET Request)
+      curl "http://localhost:3000/api/students/search/class?className=1A"
+
+   Cập Nhật Thông Tin Học Sinh (PUT Request)
+      curl -X PUT http://localhost:3000/api/students/1 -H "Content-Type: application/json" -d '{"name": "Minh Huy", "className": "2A}'
+
+   Xóa Học Sinh (DELETE Request)
+      curl -X DELETE http://localhost:3000/api/students/1
+
+   Thêm Lớp (POST Request)
+      curl -X POST http://localhost:3000/api/classes -H "Content-Type: application/json" -d '{"className": "1A"}'
+
+   Truy Xuất Lớp Theo ID (GET Request)
+      curl http://localhost:3000/api/classes/1
+
+   Cập Nhật Thông Tin Lớp (PUT Request)
+      curl -X PUT http://localhost:3000/api/classes/1 -H "Content-Type: application/json" -d '{"className": "2A"}'
+
+   Xóa Lớp (DELETE Request)
+      curl -X DELETE http://localhost:3000/api/classes/1
